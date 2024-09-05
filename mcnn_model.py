@@ -70,11 +70,3 @@ class MCNN(nn.Module):
             elif isinstance(m, nn.BatchNorm2d):
                 nn.init.constant_(m.weight, 1)
                 nn.init.constant_(m.bias, 0)
-
-
-# test code
-if __name__=="__main__":
-    img=torch.rand((1,3,800,1200),dtype=torch.float)
-    mcnn=MCNN()
-    out_dmap=mcnn(img)
-    print(out_dmap.shape)
